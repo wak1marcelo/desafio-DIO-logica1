@@ -11,23 +11,35 @@ let eloDoHeroi
 //Se XP for entre 9.001 e 10.000= Imortal
 //Se XP for maior ou igual a 10.001 = Radiante
 
-if (nivelDeExperiencia < 1000) {
-  eloDoHeroi = 'Ferro'
-} else if ((nivelDeExperiencia >= 1001) || (nivelDeExperiencia < 2000)) {
-  eloDoHeroi = 'Bronze'
-} else if ((nivelDeExperiencia >= 2001) || (nivelDeExperiencia < 5000)) {
-  eloDoHeroi = 'Prata'
-} else if ((nivelDeExperiencia >= 5001) || (nivelDeExperiencia < 7000)) {
-  eloDoHeroi = 'Ouro'
-} else if ((nivelDeExperiencia >= 7001) || (nivelDeExperiencia < 8000)) {
-  eloDoHeroi = 'Platina'
-} else if ((nivelDeExperiencia >= 8001) || (nivelDeExperiencia < 9000)) {
-  eloDoHeroi = 'Ascendente'
-} else if ((nivelDeExperiencia >= 9001) || (nivelDeExperiencia < 10000)) {
-  eloDoHeroi = 'Imortal'
-} else if (nivelDeExperiencia >= 10001) {
-  eloDoHeroi = 'Radiante'
-} else {
-  console.log("Elo incorreto")
+switch (true) {
+  case nivelDeExperiencia < 1000:
+    eloDoHeroi = 'Ferro';
+    break;
+  case nivelDeExperiencia >= 1000 && nivelDeExperiencia < 2000:
+    eloDoHeroi = 'Bronze';
+    break;
+  case nivelDeExperiencia >= 2000 && nivelDeExperiencia < 5000:
+    eloDoHeroi = 'Prata';
+    break;
+  case nivelDeExperiencia >= 5000 && nivelDeExperiencia < 7000:
+    eloDoHeroi = 'Ouro';
+    break;
+  case nivelDeExperiencia >= 7000 && nivelDeExperiencia < 8000:
+    eloDoHeroi = 'Platina';
+    break;
+  case nivelDeExperiencia >= 8000 && nivelDeExperiencia < 9000:
+    eloDoHeroi = 'Ascendente';
+    break;
+  case nivelDeExperiencia >= 9000 && nivelDeExperiencia < 10000:
+    eloDoHeroi = 'Imortal';
+    break;
+  case nivelDeExperiencia >= 10000:
+    eloDoHeroi = 'Radiante';
+    break;
+  default:
+    console.log("Elo incorreto");
 }
-console.log("O Herói de nome " + nomeDoHeroi + " está no nível de " + eloDoHeroi)
+
+if (eloDoHeroi) {
+  console.log("O Herói de nome " + nomeDoHeroi + " está no nível de " + eloDoHeroi);
+}
